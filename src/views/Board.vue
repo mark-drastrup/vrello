@@ -70,25 +70,36 @@ export default {
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 25px;
-  justify-content: space-around;
+  align-content: stretch;
   padding: 25px;
+  background-color: #57bf6b;
 }
 
 .board__column {
   border-radius: 3px;
   background-color: #ebecf0;
+
+  h2 {
+    text-align: left;
+    margin-left: 25px;
+  }
 }
 
 .card__wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  height: 90%;
 }
 
 .card {
   background-color: #fff;
   width: 90%;
   margin-bottom: 15px;
+  box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
 }
+
+// .sortable-chosen {
+//   visibility: hidden;
+// }
 </style>
