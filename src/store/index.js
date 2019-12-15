@@ -10,15 +10,21 @@ export default new Vuex.Store({
       { id: 2, text: "Do the dishes" },
       { id: 3, text: "Study coding" }
     ],
-    inProgress: [{ id: 4, text: "Clean room" }]
+    inProgress: [{ id: 4, text: "Clean room" }],
+    done: [
+      { id: 5, text: "Book tickets" },
+      { id: 6, text: "Do homework" }
+    ]
   },
   mutations: {
     updateTodo(state, array) {
       state.todos = array;
-      console.log(state.todos);
     },
     updateInProgress(state, array) {
       state.inProgress = array;
+    },
+    updateDone(state, array) {
+      state.done = array;
     }
   },
   actions: {
@@ -27,6 +33,9 @@ export default new Vuex.Store({
     },
     updateInProgress({ commit }, array) {
       commit("updateInProgress", array);
+    },
+    updateDone({ commit }, array) {
+      commit("updateDone", array);
     }
   },
   modules: {}
