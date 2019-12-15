@@ -1,19 +1,31 @@
 <template>
   <div class="board">
-    <h2>Todo</h2>
-    <draggable v-model="todos" group="tasks">
-      <div v-for="todo in todos" :key="todo.id">{{todo.text}}</div>
-    </draggable>
+    <div class="board__column">
+      <h2>Todo</h2>
+      <draggable v-model="todos" group="tasks" class="card__wrapper">
+        <div v-for="todo in todos" :key="todo.id" class="card">
+          <p>{{todo.text}}</p>
+        </div>
+      </draggable>
+    </div>
 
-    <h2>In Progress</h2>
-    <draggable v-model="inProgress" group="tasks">
-      <div v-for="todo in inProgress" :key="todo.id">{{todo.text}}</div>
-    </draggable>
+    <div class="board__column">
+      <h2>In Progress</h2>
+      <draggable v-model="inProgress" group="tasks" class="card__wrapper">
+        <div v-for="todo in inProgress" :key="todo.id" class="card">
+          <p>{{todo.text}}</p>
+        </div>
+      </draggable>
+    </div>
 
-    <h2>Done</h2>
-    <draggable v-model="done" group="tasks">
-      <div v-for="todo in done" :key="todo.id">{{todo.text}}</div>
-    </draggable>
+    <div class="board__column">
+      <h2>Done</h2>
+      <draggable v-model="done" group="tasks" class="card__wrapper">
+        <div v-for="todo in done" :key="todo.id" class="card">
+          <p class="card__title">{{todo.text}}</p>
+        </div>
+      </draggable>
+    </div>
   </div>
 </template>
 
@@ -51,3 +63,32 @@ export default {
   }
 };
 </script>
+
+<style scoped lang="scss">
+.board {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 25px;
+  justify-content: space-around;
+  padding: 25px;
+}
+
+.board__column {
+  border-radius: 3px;
+  background-color: #ebecf0;
+}
+
+.card__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: #fff;
+  width: 90%;
+  margin-bottom: 15px;
+}
+</style>
