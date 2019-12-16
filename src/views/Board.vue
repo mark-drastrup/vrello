@@ -4,7 +4,7 @@
       <h2>Todo</h2>
       <draggable v-model="todos" group="tasks" class="card__wrapper">
         <div v-for="todo in todos" :key="todo.id" class="card">
-          <p>{{todo.text}}</p>
+          <p>{{ todo.text }}</p>
         </div>
       </draggable>
     </div>
@@ -13,7 +13,7 @@
       <h2>In Progress</h2>
       <draggable v-model="inProgress" group="tasks" class="card__wrapper">
         <div v-for="todo in inProgress" :key="todo.id" class="card">
-          <p>{{todo.text}}</p>
+          <p>{{ todo.text }}</p>
         </div>
       </draggable>
     </div>
@@ -22,7 +22,7 @@
       <h2>Done</h2>
       <draggable v-model="done" group="tasks" class="card__wrapper">
         <div v-for="todo in done" :key="todo.id" class="card">
-          <p class="card__title">{{todo.text}}</p>
+          <p class="card__title">{{ todo.text }}</p>
         </div>
       </draggable>
     </div>
@@ -99,7 +99,7 @@ export default {
   box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
 }
 
-// .sortable-chosen {
-//   visibility: hidden;
-// }
+.sortable-drag {
+  transform: rotate(20deg);
+}
 </style>
