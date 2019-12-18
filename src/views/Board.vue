@@ -66,13 +66,16 @@ export default {
 
 <style scoped lang="scss">
 .board {
+  --numCols: 3;
+  --width: 300px;
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(var(--numCols), 300px);
   grid-gap: 25px;
   align-content: stretch;
   padding: 25px;
   background-color: #57bf6b;
+  overflow-x: auto;
 }
 
 .board__column {
@@ -97,9 +100,10 @@ export default {
   width: 90%;
   margin-bottom: 15px;
   box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+  cursor: pointer;
 }
 
-.sortable-drag {
-  transform: rotate(20deg);
+.sortable-chosen {
+  opacity: 0.5;
 }
 </style>
